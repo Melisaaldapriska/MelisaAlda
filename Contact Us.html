@@ -1,48 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+ <head>
     <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>About Me</title>
-</head>
+ </head>
 <body>
-	<h1>About Me</h1>
-	<p>halaman ini berisi tentang saya</p>
-    <table border="1" cellspacing="0" cellpadding="5">
-        <tr>
-            <!-- td = tabel data -->
-            <td><b>Nama</b></td>
-            <td>Melisa Alda Priska</td>
-        </tr>
-        <tr>
-            <td>NIM</td>
-            <td>220709098</td>
-        </tr>
-        <tr>
-            <td>Program Studi</td>
-<td>Perpustakaan dan Sains Informasi</td>
-        </tr>
-        <tr>
-            <td>Fakultas</td>
-            <td>Ilmu Budaya</td>
-        </tr>
-        <tr>
-            <td>Universitas</td>
-            <td>Universitas Sumatera Utara</td>
-        </tr>
-<tr>
-<td>Email</td>
-<td>melisapriska198@gmail.com</td>
-</tr>
-    </table>
-        
+	<h1>Contact Us</h1>
+	<p>Mau tau lebih banyak tentangku? Kirimi aku beberapa pesan dengan mengisi form dibawah ini agar kita bisa menjadi lebih dekat</p>
+    <form>
+        <label for="name">Nama:</label><br>
+        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required><br><br>
+
+        <label for="message">Pesan:</label><br>
+        <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda" required></textarea><br><br>
+
+        <button type="submit">Kirim</button>
+    </form>
+            
     <h4>Halaman lain</h4>
     <ul>
         <li>
             <a href="index.html">Home</a>
         </li>
         <li>
-            <a href="contact us.html">Contact Us</a>
+            <a href="About.html">About Me</a>
         </li>
     </ul>
 </body>
