@@ -1,22 +1,85 @@
-<html>
+<!DOCTYPE html>
+<html lang="id">
 <head>
-<title>Homepage saya</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Melisa Alda Priska</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #87CEFA; /* Warna tosca muda */
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 {
+            color: rgba(0, 0, 0, 0.7); /* Warna teks sedikit transparan */
+            margin-left: 20px;
+            font-size: 24px;
+        }
+        .nav-links {
+            margin-right: 20px;
+        }
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            flex: 1; /* Membuat konten mengisi ruang yang tersisa */
+            padding: 20px;
+        }
+        footer {
+            background-color: #4682B4; /* Warna tosca lebih gelap */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Efek bayangan untuk tampilan lebih elegan */
+        }
+    </style>
 </head>
 <body>
-<h1>Perpustakaan Melisa</h1>
-<h2>Tentang Saya</h2>
-<p>Hi, Perkenalkan, Nama saya Melisa Alda Priska. Ini adalah Perpustakaan personal saya yang berisi tugas-tugas akademik.</p>
-  <h3>Kerja Sama dengan perpustakaan</h3>
-  <a href="https://perpustakaan.unimed.ac.id/">Perpustakaan Unimed</a>
-  <h4>Halaman Lain</h4>
-  <ul>
-        <li>
-  <a href="Biodata.html">Biodata saya</a>
-  </li>
-        <li>
-  <a href="Contact Us.html">Contact us</a>
-        </li>
-  </ul>
-          
+
+    <div class="navbar">
+        <h1>Perpustakaan Melisa</h1>
+        <div class="nav-links">
+            <a href="index.html">Homepage</a>
+            <a href="biodata.html">About Me</a>
+            <a href="contact us.html">Contact Us</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Selamat Datang di Perpustakaan Melisa Alda Priska</h2>
+        <p>Ini adalah perpustakaan personal saya yang berisi tugas-tugas akademik.</p>
+
+        <ul>
+            <li>Kami bekerja sama dengan perpustakaan lain.</li>
+        </ul>
+        <a href="https://perpustakaan.unimed.ac.id/" target="_blank">Perpustakaan Unimed</a>
+
+        <p>Membaca adalah jendela dunia, mari buka lebih banyak jendela!</p>
+    </div>
+
+    <footer>
+        &copy; 2025 Perpustakaan Melisa Alda Priska | Semua Hak Dilindungi
+    </footer>
+
 </body>
 </html>
