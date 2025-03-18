@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function createFlower() {
         let flower = document.createElement("div");
         flower.classList.add("bunga");
-        flower.innerHTML = "🌸"; // Emoji bunga
+        flower.innerHTML = "🌻" "🦋"; // Emoji bunga
 
         // Posisi awal bunga secara acak
         flower.style.left = Math.random() * window.innerWidth + "px";
