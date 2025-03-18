@@ -1,85 +1,98 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Melisa Alda Priska</title>
+<title>Animasi Bunga Berjatuhan</title>
     <style>
         body {
+            background-color: grey; /* Warna latar belakang */
+            overflow: hidden;
             margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
-        .navbar {
-            background-color: #87CEFA; /* Warna tosca muda */
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .navbar h1 {
-            color: rgba(0, 0, 0, 0.7); /* Warna teks sedikit transparan */
-            margin-left: 20px;
+
+        .bunga {
+            position: absolute;
+            top: -50px;
             font-size: 24px;
+            animation: jatuh linear infinite;
         }
-        .nav-links {
-            margin-right: 20px;
-        }
-        .nav-links a {
-            color: black;
-            text-decoration: none;
-            margin-left: 15px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-        .content {
-            flex: 1; /* Membuat konten mengisi ruang yang tersisa */
-            padding: 20px;
-        }
-        footer {
-            background-color: #4682B4; /* Warna tosca lebih gelap */
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 14px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Efek bayangan untuk tampilan lebih elegan */
+
+        @keyframes jatuh {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="navbar">
-        <h1>Perpustakaan Melisa</h1>
-        <div class="nav-links">
-            <a href="index.html">Homepage</a>
-            <a href="biodata.html">About Me</a>
-            <a href="contact us.html">Contact Us</a>
-        </div>
-    </div>
+    <!-- Memanggil script.js -->
+    <script src="script.js"></script>
 
-    <div class="content">
-        <h2>Selamat Datang di Perpustakaan Melisa Alda Priska</h2>
-        <p>Ini adalah perpustakaan personal saya yang berisi tugas-tugas akademik.</p>
-
-        <ul>
-            <li>Kami bekerja sama dengan perpustakaan lain.</li>
+</body>
+</html>
+    <title>My GitHub Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
         </ul>
-        <a href="https://perpustakaan.unimed.ac.id/" target="_blank">Perpustakaan Unimed</a>
+    </nav>
+</header>
+            </ul>
+        </nav>
+    </header>
 
-        <p>Membaca adalah jendela dunia, mari buka lebih banyak jendela!</p>
-    </div>
+    <main>
+        <h1>Selamat datang di perpustakaan online Melisa Alda Priska</h1>
+        <b1>Selamat datang di Perpustakaan Digital Melisa – Membuka Pintu Pengetahuan dengan Teknologi Terkini.</b1></p>
+    </main>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Saya</title>
+    <style>
+        h1 {
+    text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
 
-    <footer>
-        &copy; 2025 Perpustakaan Melisa Alda Priska | Semua Hak Dilindungi
-    </footer>
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
 
+    <p>Klik tombol di bawah untuk mengunjungi Perpustakaan STIKOM Bali:</p>
+
+    <a href="https://perpustakaan.unimed.ac.id/" target="_blank" class="btn">
+        Kunjungi Perpustakaan Unimed
+    </a>
+
+</body>
+</html>
+    <script src="script.js"></script>
 </body>
 </html>
