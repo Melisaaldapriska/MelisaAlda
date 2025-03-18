@@ -18,4 +18,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Buat bunga setiap 300ms
     setInterval(createFlower, 300);
-});
+}); 
