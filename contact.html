@@ -1,46 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Perpustakaan</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://source.unsplash.com/1600x900/?library');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+        .links a:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .contact {
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+        }
+        table, th, td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-
-    <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="About Me.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="Contact-form">
-        <h2>Get in Touch</h2>
-        <form id="contactForm">
-           <label for="name">Nama:</label><br>
-        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required><br><br>
-
-            <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required><br><br>
-            
-            <label for="message">Pesan:</label><br>
-        <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda" required></textarea><br><br>
-
-             <button type="submit">Kirim</button>
-    </form>
-            
-    <ul>
-        
-    </ul>
-</body>
-</html>
-
-    <script src="script.js"></script>
-
+    <div class="container">
+        <h1>Selamat Datang di Perpustakaan</h1>
+        <p>Mari temukan buku favorit Anda dan jelajahi dunia pengetahuan!</p>
+        <div class="links">
+            <a href="#biodata">Biodata</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+    <div id="contact" class="contact">
+        <h2>Contact Kami</h2>
+        <table>
+            <tr>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Pesan</th>
+            </tr>
+            <tr>
+                <td>Perpustakaan Pusat</td>
+                <td>info@perpustakaan.com</td>
+                <td>+62 812 3456 7890</td>
+            </tr>
+            <tr>
+                <td>Admin</td>
+                <td>admin@perpustakaan.com</td>
+                <td>+62 811 2233 4455</td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
