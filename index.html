@@ -13,6 +13,7 @@
             background-position: center;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
@@ -30,12 +31,31 @@
         p {
             font-size: 1.5em;
         }
+        .links {
+            margin-top: 20px;
+        }
+        .links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+        .links a:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Selamat Datang di Perpustakaan Melisa Alda Priska</h1>
         <p>Mari temukan buku favorit Anda dan jelajahi dunia pengetahuan!</p>
+        <div class="links">
+            <a href="#biodata">Biodata</a>
+            <a href="#contact">Contact</a>
+        </div>
     </div>
 </body>
 </html>
