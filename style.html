@@ -3,154 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animasi Bunga & Form Kontak</title>
-    <style>
-        body {
-            background-color: yellow;
-            overflow: hidden;
-            margin: 0;
-            font-family: "Times New Roman", sans-serif;
-        }
-
-        .bunga {
-            position: absolute;
-            top: -50px;
-            font-size: 24px;
-            animation: jatuh 5s linear infinite;
-        }
-
-        @keyframes jatuh {
-            0% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-        }
-
-        header {
-            background-color: #333;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        .menu {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-            background-color: #333;
-        }
-
-        .menu li {
-            margin: 0 15px;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: purple;
-            font-size: 18px;
-            transition: 0.3s;
-        }
-
-        .menu a:hover {
-            color: #f4a261;
-        }
-
-        .contact-form {
-            width: 60%;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        .contact-form h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: #007BFF;
-        }
-
-        .contact-form button {
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Perpustakaan Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-        <ul class="menu">
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#">Tentang</a></li>
-            <li><a href="#">Kontak</a></li>
-        </ul>
+<body class="bg-gray-100">
+    <header class="bg-blue-600 text-white p-4 text-center text-xl font-bold">
+        Perpustakaan Digital
     </header>
-
-    <div class="contact-form">
-        <h2>Hubungi Kami</h2>
-        <form>
-            <label for="nama">Nama</label>
-            <input type="text" id="nama" name="Melisa Alda Priska" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="melisapriska@gmail.com" required>
-
-            <label for="pesan">Pesan</label>
-            <textarea id="pesan" name="pesan" rows="4" required></textarea>
-
-            <button type="submit">Kirim</button>
-        </form>
-    </div>
-
-    <script>
-        function buatBunga() {
-            const bunga = document.createElement("div");
-            bunga.innerHTML = "&#10047;";
-            bunga.classList.add("bunga");
-            bunga.style.left = Math.random() * window.innerWidth + "px";
-            bunga.style.animationDuration = (Math.random() * 3 + 2) + "s";
-            document.body.appendChild(bunga);
-            setTimeout(() => bunga.remove(), 5000);
-        }
-
-        setInterval(buatBunga, 500);
-    </script>
+    <main class="container mx-auto p-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="text-lg font-semibold">Judul Buku 1</h2>
+                <p class="text-gray-600">Penulis: Nama Penulis</p>
+                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded">Baca</button>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="text-lg font-semibold">Judul Buku 2</h2>
+                <p class="text-gray-600">Penulis: Nama Penulis</p>
+                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded">Baca</button>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="text-lg font-semibold">Judul Buku 3</h2>
+                <p class="text-gray-600">Penulis: Nama Penulis</p>
+                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded">Baca</button>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
