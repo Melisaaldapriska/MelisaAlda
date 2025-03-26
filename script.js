@@ -3,55 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Efek Bunga Jatuh 3D</title>
+    <title>Perpustakaan 3D</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background: linear-gradient(to bottom, #87CEFA, #f0f8ff);
-        }
-        .bunga {
-            position: absolute;
-            top: 0;
-            font-size: 2rem;
-            transform: rotateY(0deg);
-            animation: jatuh linear infinite;
-        }
-        @keyframes jatuh {
-            0% {
-                transform: translateY(0) rotateY(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh) rotateY(360deg);
-                opacity: 0;
-            }
-        }
+        body { margin: 0; }
+        canvas { display: block; }
     </style>
 </head>
 <body>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            function createFlower() {
-                let flower = document.createElement("div");
-                flower.classList.add("bunga");
-                flower.innerHTML = "🌸"; // Emoji bunga
-                
-                // Posisi awal bunga secara acak
-                flower.style.left = Math.random() * window.innerWidth + "px";
-                flower.style.animationDuration = (Math.random() * 3 + 2) + "s"; // Durasi jatuh acak
-                
-                document.body.appendChild(flower);
+        // Setup Scene
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
 
-                // Hapus bunga setelah jatuh
-                setTimeout(() => {
-                    flower.remove();
-                }, 5000);
-            }
+        // Tambahkan lantai perpustakaan
+        const floorGeometry = new THREE.PlaneGeometry(20, 20);
+        const floorMaterial = new THREE.MeshBasicMaterial({ color: 0xa0522d, side: THREE.DoubleSide });
+        const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+        floor.rotation.x = Math.PI / 2;
+        scene.add(floor);
 
-            // Buat bunga setiap 300ms
-            setInterval(createFlower, 300);
-        });
+        // Tambahkan rak buku
+        function createShelf(x, z) {
+            const shelfGeometry = new THREE.BoxGeometry(2, 5, 1);
+            const shelfMaterial = new THREE.MeshBasicMaterial({ color: 0x8b4513 });
+            const shelf = new THREE.Mesh(shelfGeometry, shelfMaterial);
+            shelf.position.set(x, 2.5, z);
+            scene.add(shelf);
+        }
+        createShelf(-3, -3);
+        createShelf(3, -3);
+        createShelf(-3, 3);
+        createShelf(3, 3);
+
+        // Tambahkan pencahayaan
+        const light = new THREE.PointLight(0xffffff, 1, 100);
+        light.position.set(0, 5, 0);
+        scene.add(light);
+
+        camera.position.set(0, 3, 10);
+
+        function animate() {
+            requestAnimationFrame(animate);
+            camera.position.z -= 0.01; // Gerakan kamera maju
+            renderer.render(scene, camera);
+        }
+        animate();
     </script>
 </body>
 </html>
+
