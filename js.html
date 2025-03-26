@@ -3,66 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Melisa</title>
+    <title>Perpustakaan</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: "Georgia", serif;
-            color: #4A4A4A;
+            font-family: Arial, sans-serif;
             text-align: center;
         }
-        .parallax {
-            background-image: url('https://source.unsplash.com/1600x900/?library,3d'); /* Ganti dengan gambar yang diinginkan */
-            height: 100vh;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
         .container {
-            background: rgba(255, 255, 255, 0.85);
-            padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-            margin-top: 50px;
+            width: 50%;
+            margin: auto;
         }
-        a {
-            display: block;
-            margin: 10px;
+        input, button {
+            margin: 5px;
             padding: 10px;
-            background: #FF8C94;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
         }
-        a:hover {
-            background: #E57373;
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 5px 0;
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="parallax"></div>
     <div class="container">
-        <h1>Perpustakaan Melisa</h1>
-        <h2>Tentang Saya</h2>
-        <p>Hi, Perkenalkan, Nama saya <b>Melisa Alda Priska</b>. Ini adalah Perpustakaan personal saya yang berisi tugas-tugas akademik.</p>
-        <h3>Kerja Sama dengan Perpustakaan</h3>
-        <a href="https://perpustakaan.unimed.ac.id/" target="_blank">Perpustakaan Unimed</a>
-        <h4>Halaman Lain</h4>
-        <ul>
-            <li><a href="About Me.html">Biodata Saya</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <h2>Perpustakaan Digital</h2>
+        <input type="text" id="judul" placeholder="Masukkan Judul Buku">
+        <button onclick="tambahBuku()">Tambah Buku</button>
+        <input type="text" id="cari" placeholder="Cari Buku" onkeyup="cariBuku()">
+        <table>
+            <thead>
+                <tr>
+                    <th>Judul Buku</th>
+                    <th>Pemrograman</th>
+                </tr>
+            </thead>
+            <tbody id="daftarBuku">
+            </tbody>
+        </table>
     </div>
+
+    <script>
+        function tambahBuku() {
+            let judul = document.getElementById("Pemrograman web").value;
+            if (judul === "") {
+                alert("Masukkan judul buku!");
+                return;
+            }
+            let daftarBuku = document.getElementById("daftarBuku");
+            let row = daftarBuku.insertRow();
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            cell1.textContent = judul;
+            let btn = document.createElement("button");
+            btn.textContent = "Hapus";
+            btn.onclick = function() { daftarBuku.deleteRow(row.rowIndex - 1); };
+            cell2.appendChild(btn);
+            document.getElementById("judul").value = "";
+        }
+
+        function cariBuku() {
+            let input = document.getElementById("cari").value.toLowerCase();
+            let rows = document.getElementById("daftarBuku").getElementsByTagName("tr");
+            for (let row of rows) {
+                let title = row.cells[0].textContent.toLowerCase();
+                row.style.display = title.includes(input) ? "" : "none";
+            }
+        }
+    </script>
 </body>
 </html>
