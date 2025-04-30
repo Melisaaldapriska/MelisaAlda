@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulir Data Pengunjung Perpustakaan Alifiah Fitri Ariani</title>
+    <title>Formulir Data Pengunjung Perpustakaan Melisa Alda Priska</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -54,7 +54,7 @@
 </head>
 <body>
 
-<h2>Formulir Data Pengunjung Perpustakaan Alifiah Fitri Ariani</h2>
+<h2>Formulir Data Pengunjung Perpustakaan Melisa Alda Priska</h2>
 <div class="form-container">
     <form method="post" action="inputdosen.php">
         <table>
@@ -64,7 +64,7 @@
             </tr>
             <tr>
                 <td>NIP/NIM</td>
-                <td><input type="text" name="NIP" required></td>
+                <td><input type="text" name="NIM" required></td>
             </tr>
             <tr>
                 <td>Email</td>
