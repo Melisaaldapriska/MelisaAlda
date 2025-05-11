@@ -9,198 +9,196 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
-      background: linear-gradient(to bottom right, #a18cd1, #fbc2eb);
+      background: linear-gradient(to bottom right, #6dd5fa, #f9cb28);
       background-attachment: fixed;
       color: #333;
     }
 
     .navbar {
-      background: white;
+      background: #ffffffcc;
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
     .navbar h1 {
-      color: #6a1b9a;
+      color: #00796b;
       font-size: 26px;
       margin: 0;
     }
 
     .nav-links a {
-      color: #444;
+      color: #004d40;
       text-decoration: none;
       margin-left: 20px;
       font-size: 16px;
-      transition: 0.3s ease;
+      transition: color 0.3s ease;
     }
 
     .nav-links a:hover {
-      color: #6a1b9a;
-      font-weight: bold;
+      color: #00796b;
+      font-weight: 600;
     }
 
     .content {
       flex: 1;
       padding: 30px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 40px auto;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.96);
       border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-      text-align: center;
-    }
-
-    .content h2 {
-      color: #7b1fa2;
-      font-size: 30px;
-    }
-
-    .content p,
-    .content li {
-      font-size: 17px;
-    }
-
-    .content a {
-      color: #ab47bc;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .content a:hover {
-      text-decoration: underline;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     }
 
     .anime-image {
-      width: 200px;
-      margin: 20px auto;
-      display: block;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .content h2 {
+      font-size: 30px;
+      color: #f57c00;
+      margin-top: 0;
     }
 
     .search-box {
-      margin: 30px 0;
+      margin: 40px 0 20px;
+      text-align: center;
     }
 
-    input[type="text"] {
+    .search-box input {
       padding: 10px;
       width: 60%;
-      border: 2px solid #7b1fa2;
-      border-radius: 6px;
       font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-right: 10px;
     }
 
-    button {
+    .search-box button {
       padding: 10px 20px;
-      background-color: #7b1fa2;
+      background-color: #0288d1;
       color: white;
       border: none;
       border-radius: 6px;
       font-size: 16px;
       cursor: pointer;
-      margin-left: 10px;
     }
 
-    button:hover {
-      background-color: #4a148c;
+    .search-box button:hover {
+      background-color: #01579b;
     }
 
-    .book-list {
-      list-style-type: none;
-      padding: 0;
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
     }
 
-    .book-list li {
-      background: #f3e5f5;
-      margin: 8px 0;
-      padding: 10px;
+    .book-container {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .book-container:hover {
+      transform: translateY(-5px);
+    }
+
+    .book-cover {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
       border-radius: 8px;
     }
 
+    .book-title {
+      font-size: 16px;
+      margin: 10px 0 5px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .book-link {
+      text-decoration: none;
+      color: #f06292;
+      font-weight: bold;
+    }
+
+    .book-link:hover {
+      text-decoration: underline;
+    }
+
     .events-container {
+      margin-top: 50px;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
-      margin-top: 30px;
+      flex-direction: column;
+      gap: 30px;
     }
 
     .event-card {
-      background: #fbefff;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      display: flex;
+      background: #f5f5f5;
+      border-radius: 10px;
       overflow: hidden;
-      width: 280px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: left;
-      transition: transform 0.3s ease;
-    }
-
-    .event-card:hover {
-      transform: scale(1.03);
     }
 
     .event-card img {
-      width: 100%;
-      height: 160px;
+      width: 160px;
       object-fit: cover;
     }
 
     .event-details {
-      padding: 15px;
+      padding: 20px;
+      flex: 1;
     }
 
     .event-details h2 {
-      font-size: 20px;
-      color: #6a1b9a;
-      margin: 10px 0;
+      margin: 0 0 10px;
+      font-size: 22px;
+      color: #333;
     }
 
     .event-details .date {
-      font-size: 14px;
-      color: #999;
-      margin-bottom: 8px;
+      color: #777;
+      margin-bottom: 10px;
     }
 
     .register-btn {
       display: inline-block;
       margin-top: 10px;
-      padding: 8px 14px;
-      background-color: #ab47bc;
+      padding: 10px 20px;
+      background-color: #ff7043;
       color: white;
+      border: none;
+      border-radius: 6px;
       text-decoration: none;
-      border-radius: 5px;
-      font-size: 14px;
+      transition: background 0.3s ease;
     }
 
     .register-btn:hover {
-      background-color: #8e24aa;
+      background-color: #d84315;
     }
 
     footer {
-      background: #6a1b9a;
+      background: #0288d1;
       color: white;
       text-align: center;
       padding: 15px;
       font-size: 14px;
-      margin-top: auto;
-    }
-    /* Event card unique colors */
-    .event-card:nth-child(1) {
-      background: #fff3e0;
-    }
-
-    .event-card:nth-child(2) {
-      background: #e8f5e9;
-    }
-
-    .event-card:nth-child(3) {
-      background: #ede7f6;
     }
   </style>
 </head>
@@ -220,8 +218,8 @@
     <h2>Selamat Datang di Perpustakaan Melisa Alda Priska</h2>
     <p>
       Halo! Nama saya Melisa Alda Priska, dan ini adalah perpustakaan digital pribadi saya.
-      Di sini, saya akan menampilkan berbagai tugas akademik dan catatan pembelajaran yang telah saya susun selama studi.
-      Tujuan dari perpustakaan ini adalah untuk berbagi ilmu dan referensi yang mungkin bermanfaat bagi teman-teman yang sedang menempuh pendidikan atau mencari inspirasi dalam dunia akademik.
+      Di sini, saya menampilkan berbagai tugas akademik dan catatan pembelajaran yang telah saya susun selama studi.
+      Tujuan dari perpustakaan ini adalah untuk berbagi ilmu dan referensi yang mungkin bermanfaat bagi teman-teman pelajar atau pencinta buku.
     </p>
 
     <div class="search-box">
@@ -229,12 +227,16 @@
       <input type="text" id="searchInput" placeholder="Masukkan judul buku..." onkeyup="searchBook()">
       <button onclick="searchGoogle()">Cari</button>
     </div>
-<div class="book-container">
-        <img src="https://upload.wikimedia.org/wikipedia/id/5/56/Harry_potter_deathly_hallows_US.jpg" alt="Cover Buku" class="book-cover">
+
+    <div class="book-grid">
+      <!-- Semua book-container Anda di sini -->
+      <!-- Contoh -->
+      <div class="book-container">
+        <img src="https://upload.wikimedia.org/wikipedia/id/5/56/Harry_potter_deathly_hallows_US.jpg" alt="Harry Potter" class="book-cover">
         <div class="book-title">Harry Potter</div>
-        <a href="https://kvongcmehsanalibrary.wordpress.com/wp-content/uploads/2021/07/harrypotter.pdf" class="book-link" target="_blank">Baca Buku</a>
-</div> 
-    <div class="book-container">
+        <a href="https://kvongcmehsanalibrary.wordpress.com/wp-content/uploads/2021/07/harrypotter.pdf" target="_blank" class="book-link">Baca Buku</a>
+      </div>
+     <div class="book-container">
     <img src="https://upload.wikimedia.org/wikipedia/id/7/7f/Perahu_Kertas_Sampul.jpg" alt="Cover Buku" class="book-cover">
         <div class="book-title">Perahu Kertas</div>
         <a href="https://repository.bbg.ac.id/bitstream/513/1/Perahu_Kertas.pdf" class="book-link" target="_blank">Baca Buku</a>
@@ -253,10 +255,11 @@
     <img src="https://img.tempo.co/indonesiana/images/all/2016/08/03/700-cil2015.jpg" alt="Cover Buku" class="book-cover">
         <div class="book-title">Cantik Itu Luka</div>
         <a href="https://repository.bbg.ac.id/bitstream/1772/1/Eka_Kurniawan_-_Cantik_itu_Luka.pdf" class="book-link" target="_blank">Baca Buku</a>
-</div>  
+</div>
+  
+
     <h2>Event Literasi Terkini</h2>
     <div class="events-container">
-
       <div class="event-card">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYPZ8J0EUzx5C3yDhZ-AAz0pmVVJfYQaYP8Q&s" alt="Event 1">
         <div class="event-details">
@@ -285,8 +288,6 @@
           <p>Webinar nasional tentang pentingnya literasi digital bagi generasi muda.</p>
           <a href="https://event.detik.com/" target="_blank" class="register-btn">Daftar Webinar</a>
         </div>
-      </div>
-
     </div>
   </div>
 
@@ -307,11 +308,10 @@
 
     function searchBook() {
       const input = document.getElementById("searchInput").value.toLowerCase();
-      const listItems = document.querySelectorAll("#bookList li");
-
-      listItems.forEach(item => {
-        const title = item.textContent.toLowerCase();
-        item.style.display = title.includes(input) ? "block" : "none";
+      const books = document.querySelectorAll(".book-container");
+      books.forEach(book => {
+        const title = book.querySelector(".book-title").textContent.toLowerCase();
+        book.style.display = title.includes(input) ? "block" : "none";
       });
     }
   </script>
