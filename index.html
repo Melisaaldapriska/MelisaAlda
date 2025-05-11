@@ -11,16 +11,20 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            background-image: url('C:\Users\lenov\OneDrive\Pictures\unimed.png'); /* Ganti dengan URL gambar yang Anda inginkan */
+            background-size: cover;
+            background-position: center;
+            color: #fff; /* Agar teks terlihat jelas di atas gambar */
         }
         .navbar {
-            background-color: #87CEFA; /* Warna biru muda */
+            background-color: rgba(135, 206, 250, 0.8); /* Biru muda semi transparan */
             padding: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .navbar h1 {
-            color: rgba(0, 0, 0, 0.7); /* Warna teks sedikit transparan */
+            color: rgba(0, 0, 0, 0.8);
             margin-left: 20px;
             font-size: 24px;
         }
@@ -38,19 +42,19 @@
             text-decoration: underline;
         }
         .content {
-            flex: 1; /* Membuat konten mengisi ruang yang tersisa */
+            flex: 1;
             padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan untuk teks */
+            margin: 20px;
+            border-radius: 10px;
         }
         footer {
-            background-color: #4682B4; /* Warna biru lebih gelap */
+            background-color: rgba(70, 130, 180, 0.9);
             color: white;
             text-align: center;
             padding: 15px;
             font-size: 14px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Efek bayangan untuk tampilan lebih elegan */
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -72,7 +76,7 @@
         <ul>
             <li>Kami bekerja sama dengan perpustakaan lain.</li>
         </ul>
-        <a href="https://perpustakaan.unimed.ac.id/" target="_blank">Perpustakaan UNIMED</a>
+        <a href="https://perpustakaan.unimed.ac.id/" target="_blank" style="color: #ffd700;">Perpustakaan UNIMED</a>
 
         <p>Membaca adalah jendela dunia, mari buka lebih banyak jendela!</p>
     </div>
@@ -83,3 +87,4 @@
 
 </body>
 </html>
+
