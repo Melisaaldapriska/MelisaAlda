@@ -4,57 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Melisa Alda Priska</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Kalam', cursive;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-image: url('https://perpustakaan.unimed.ac.id/assets/plugins/ckfinder/userfiles/files/DSC_0013(1).JPG'); /* Ganti dengan URL gambar yang Anda inginkan */
-            background-size: cover;
-            background-position: center;
-            color: #fff; /* Agar teks terlihat jelas di atas gambar */
+            background: linear-gradient(to bottom right, #fceabb, #f8b500);
+            background-attachment: fixed;
+            color: #333;
+            overflow-x: hidden;
         }
         .navbar {
-            background-color: rgba(135, 206, 250, 0.8); /* Biru muda semi transparan */
-            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         .navbar h1 {
-            color: rgba(0, 0, 0, 0.8);
-            margin-left: 20px;
-            font-size: 24px;
-        }
-        .nav-links {
-            margin-right: 20px;
+            color: #ff6f61;
+            font-size: 28px;
         }
         .nav-links a {
-            color: black;
+            color: #333;
             text-decoration: none;
-            margin-left: 15px;
-            font-size: 16px;
-            font-weight: bold;
+            margin-left: 20px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
         .nav-links a:hover {
-            text-decoration: underline;
+            background-color: #ff6f61;
+            color: white;
         }
         .content {
             flex: 1;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan untuk teks */
-            margin: 20px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+        .content h2 {
+            color: #e65100;
+            font-size: 32px;
+        }
+        .content p, .content li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .content a {
+            color: #ff4081;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .content a:hover {
+            text-decoration: underline;
+        }
+        .anime-image {
+            width: 200px;
+            margin: 20px auto;
+            display: block;
             border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         footer {
-            background-color: rgba(70, 130, 180, 0.9);
+            background: #ffb74d;
             color: white;
             text-align: center;
-            padding: 15px;
-            font-size: 14px;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            font-size: 15px;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
@@ -70,15 +97,16 @@
     </div>
 
     <div class="content">
+        <img src="https://i.pinimg.com/originals/1b/cf/40/1bcf409f3022e6855f7fd1fa77890f91.jpg" alt="Karakter Anime" class="anime-image">
         <h2>Selamat Datang di Perpustakaan Melisa Alda Priska</h2>
         <p>Ini adalah perpustakaan personal saya yang berisi tugas-tugas akademik.</p>
 
         <ul>
             <li>Kami bekerja sama dengan perpustakaan lain.</li>
         </ul>
-        <a href="https://perpustakaan.unimed.ac.id/" target="_blank" style="color: #ffd700;">Perpustakaan UNIMED</a>
+        <a href="https://perpustakaan.unimed.ac.id/" target="_blank">Perpustakaan UNIMED</a>
 
-        <p>Membaca adalah jendela dunia, mari buka lebih banyak jendela!</p>
+        <p>"Membaca adalah jendela dunia" — buka jendela pengetahuanmu seperti petualangan dalam anime favoritmu!</p>
     </div>
 
     <footer>
@@ -87,4 +115,3 @@
 
 </body>
 </html>
-
