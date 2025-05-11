@@ -101,6 +101,7 @@
         .book-list {
             list-style-type: none;
             padding: 0;
+            margin-top: 20px;
         }
         .book-list li {
             background: #fff3e0;
@@ -140,24 +141,19 @@
         <a href="https://perpustakaan.unimed.ac.id/" target="_blank">Perpustakaan UNIMED</a>
 
         <div class="search-box">
-    <h3>Cari Buku:</h3>
-    <input type="text" id="searchInput" placeholder="Masukkan judul buku...">
-    <button onclick="searchGoogle()">Cari</button>
-</div>
+            <h3>Cari Buku:</h3>
+            <input type="text" id="searchInput" placeholder="Masukkan judul buku..." onkeyup="searchBook()">
+            <button onclick="searchGoogle()">Cari di Google</button>
+        </div>
 
-<script>
-    function searchGoogle() {
-        const input = document.getElementById("searchInput").value.trim();
-        if (input !== "") {
-            const query = encodeURIComponent(input + " site:goodreads.com OR site:tokopedia.com OR site:gramedia.com");
-            window.open("https://www.google.com/search?q=" + query, "_blank");
-        } else {
-            alert("Silakan masukkan judul buku terlebih dahulu.");
-        }
-    }
-</script>
-
+        <ul class="book-list" id="bookList">
+            <li>1. Laskar Pelangi - Andrea Hirata</li>
+            <li>2. Negeri 5 Menara - Ahmad Fuadi</li>
+            <li>3. Bumi - Tere Liye</li>
+            <li>4. Ayat-Ayat Cinta - Habiburrahman El Shirazy</li>
+            <li>5. Aroma Karsa - Dee Lestari</li>
         </ul>
+
     </div>
 
     <footer>
@@ -165,6 +161,16 @@
     </footer>
 
     <script>
+        function searchGoogle() {
+            const input = document.getElementById("searchInput").value.trim();
+            if (input !== "") {
+                const query = encodeURIComponent(input + " site:goodreads.com OR site:tokopedia.com OR site:gramedia.com");
+                window.open("https://www.google.com/search?q=" + query, "_blank");
+            } else {
+                alert("Silakan masukkan judul buku terlebih dahulu.");
+            }
+        }
+
         function searchBook() {
             const input = document.getElementById("searchInput").value.toLowerCase();
             const listItems = document.querySelectorAll("#bookList li");
