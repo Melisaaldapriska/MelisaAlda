@@ -3,58 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Melisa</title>
+    <title>Perpustakaan Melisa Alda Priska</title>
     <style>
         body {
-            background: linear-gradient(to right, #FFF5E1, #FFDAB9);
-            font-family: "Georgia", serif;
-            color: #4A4A4A;
-            text-align: center;
-            padding: 50px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        .container {
-            background: rgba(255, 255, 255, 0.85);
-            padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        .navbar {
+            background-color: #87CEFA; /* Warna biru muda */
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        a {
-            display: block;
-            margin: 10px;
-            padding: 10px;
-            background: #FF8C94;
-            color: white;
+        .navbar h1 {
+            color: rgba(0, 0, 0, 0.7); /* Warna teks sedikit transparan */
+            margin-left: 20px;
+            font-size: 24px;
+        }
+        .nav-links {
+            margin-right: 20px;
+        }
+        .nav-links a {
+            color: black;
             text-decoration: none;
-            border-radius: 5px;
+            margin-left: 15px;
+            font-size: 16px;
             font-weight: bold;
         }
-        a:hover {
-            background: #E57373;
+        .nav-links a:hover {
+            text-decoration: underline;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .content {
+            flex: 1; /* Membuat konten mengisi ruang yang tersisa */
+            padding: 20px;
         }
-        li {
-            margin: 5px 0;
+        footer {
+            background-color: #4682B4; /* Warna biru lebih gelap */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Efek bayangan untuk tampilan lebih elegan */
         }
     </style>
 </head>
 <body>
-    <div class="container">
+
+    <div class="navbar">
         <h1>Perpustakaan Melisa</h1>
-        <h2>Tentang Saya</h2>
-        <p>Hi, Perkenalkan, Nama saya <b>Melisa Alda Priska</b>. Ini adalah Perpustakaan personal saya yang berisi tugas-tugas akademik.</p>
-        <h3>Kerja Sama dengan Perpustakaan</h3>
-        <a href="https://perpustakaan.unimed.ac.id/" target="_blank">Perpustakaan Unimed</a>
-        <h4>Halaman Lain</h4>
-        <ul>
-            <li><a href="About.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-             <li><a href="js.html">javascript</a></li>
-             <li><a href="event.html">event</a></li>
-        </ul>
+        <div class="nav-links">
+            <a href="index.html">Homepage</a>
+            <a href="biodata.html">About Me</a>
+            <a href="contact us.html">Contact Us</a>
+        </div>
     </div>
+
+    <div class="content">
+        <h2>Selamat Datang di Perpustakaan Melisa Alda Priska</h2>
+        <p>Ini adalah perpustakaan personal saya yang berisi tugas-tugas akademik.</p>
+
+        <ul>
+            <li>Kami bekerja sama dengan perpustakaan lain.</li>
+        </ul>
+        <a href="https://perpustakaan.unimed.ac.id/" target="_blank">Perpustakaan UNIMED</a>
+
+        <p>Membaca adalah jendela dunia, mari buka lebih banyak jendela!</p>
+    </div>
+
+    <footer>
+        &copy; 2025 Perpustakaan Melisa Alda Priska | Semua Hak Dilindungi
+    </footer>
+
 </body>
 </html>
