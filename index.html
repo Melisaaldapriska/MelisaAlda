@@ -140,17 +140,23 @@
         <a href="https://perpustakaan.unimed.ac.id/" target="_blank">Perpustakaan UNIMED</a>
 
         <div class="search-box">
-            <h3>Cari Buku:</h3>
-            <input type="text" id="searchInput" placeholder="Masukkan judul buku...">
-            <button onclick="searchBook()">Cari</button>
-        </div>
+    <h3>Cari Buku (via Google):</h3>
+    <input type="text" id="searchInput" placeholder="Masukkan judul buku...">
+    <button onclick="searchGoogle()">Cari di Google</button>
+</div>
 
-        <ul class="book-list" id="bookList">
-            <li>Raisha dan Trisula Raja</li>
-            <li>Laskar Pelangi</li>
-            <li>Negeri 5 Menara</li>
-            <li>Ayat-Ayat Cinta</li>
-            <li>Bumi - Tere Liye</li>
+<script>
+    function searchGoogle() {
+        const input = document.getElementById("searchInput").value.trim();
+        if (input !== "") {
+            const query = encodeURIComponent(input + " site:goodreads.com OR site:tokopedia.com OR site:gramedia.com");
+            window.open("https://www.google.com/search?q=" + query, "_blank");
+        } else {
+            alert("Silakan masukkan judul buku terlebih dahulu.");
+        }
+    }
+</script>
+
         </ul>
     </div>
 
