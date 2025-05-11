@@ -9,21 +9,21 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
       background: linear-gradient(to bottom right, #6dd5fa, #f9cb28);
       background-attachment: fixed;
       color: #333;
     }
 
     .navbar {
-      background: #ffffffcc;
+      background: #e0f7fa;
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .navbar h1 {
@@ -37,22 +37,34 @@
       text-decoration: none;
       margin-left: 20px;
       font-size: 16px;
-      transition: color 0.3s ease;
+      transition: 0.3s ease;
     }
 
     .nav-links a:hover {
-      color: #00796b;
-      font-weight: 600;
+      color: #00695c;
+      font-weight: bold;
     }
 
     .content {
       flex: 1;
       padding: 30px;
-      max-width: 1000px;
+      max-width: 900px;
       margin: 40px auto;
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255, 255, 255, 0.95);
       border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+
+    .content h2 {
+      color: #f57c00;
+      font-size: 30px;
+    }
+
+    .content a {
+      color: #f06292;
+      text-decoration: none;
+      font-weight: 600;
     }
 
     .anime-image {
@@ -62,23 +74,16 @@
       margin-bottom: 20px;
     }
 
-    .content h2 {
-      font-size: 30px;
-      color: #f57c00;
-      margin-top: 0;
-    }
-
     .search-box {
-      margin: 40px 0 20px;
-      text-align: center;
+      margin: 30px 0;
     }
 
     .search-box input {
       padding: 10px;
       width: 60%;
       font-size: 16px;
-      border: 1px solid #ccc;
       border-radius: 6px;
+      border: 1px solid #ccc;
       margin-right: 10px;
     }
 
@@ -96,55 +101,11 @@
       background-color: #01579b;
     }
 
-    .book-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 25px;
-      margin-top: 20px;
-    }
-
-    .book-container {
-      background: #f8f9fa;
-      border-radius: 10px;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
-    }
-
-    .book-container:hover {
-      transform: translateY(-5px);
-    }
-
-    .book-cover {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .book-title {
-      font-size: 16px;
-      margin: 10px 0 5px;
-      font-weight: 600;
-      color: #333;
-    }
-
-    .book-link {
-      text-decoration: none;
-      color: #f06292;
-      font-weight: bold;
-    }
-
-    .book-link:hover {
-      text-decoration: underline;
-    }
-
     .events-container {
-      margin-top: 50px;
       display: flex;
       flex-direction: column;
       gap: 30px;
+      margin-top: 30px;
     }
 
     .event-card {
@@ -199,6 +160,20 @@
       text-align: center;
       padding: 15px;
       font-size: 14px;
+      margin-top: auto;
+    }
+
+    /* Event card unique colors */
+    .event-card:nth-child(1) {
+      background: #fff3e0;
+    }
+
+    .event-card:nth-child(2) {
+      background: #e8f5e9;
+    }
+
+    .event-card:nth-child(3) {
+      background: #ede7f6;
     }
   </style>
 </head>
@@ -218,8 +193,8 @@
     <h2>Selamat Datang di Perpustakaan Melisa Alda Priska</h2>
     <p>
       Halo! Nama saya Melisa Alda Priska, dan ini adalah perpustakaan digital pribadi saya.
-      Di sini, saya menampilkan berbagai tugas akademik dan catatan pembelajaran yang telah saya susun selama studi.
-      Tujuan dari perpustakaan ini adalah untuk berbagi ilmu dan referensi yang mungkin bermanfaat bagi teman-teman pelajar atau pencinta buku.
+      Di sini, saya akan menampilkan berbagai tugas akademik dan catatan pembelajaran yang telah saya susun selama studi.
+      Tujuan dari perpustakaan ini adalah untuk berbagi ilmu dan referensi yang mungkin bermanfaat bagi teman-teman yang sedang menempuh pendidikan atau mencari inspirasi dalam dunia akademik.
     </p>
 
     <div class="search-box">
@@ -227,16 +202,12 @@
       <input type="text" id="searchInput" placeholder="Masukkan judul buku..." onkeyup="searchBook()">
       <button onclick="searchGoogle()">Cari</button>
     </div>
-
-    <div class="book-grid">
-      <!-- Semua book-container Anda di sini -->
-      <!-- Contoh -->
-      <div class="book-container">
-        <img src="https://upload.wikimedia.org/wikipedia/id/5/56/Harry_potter_deathly_hallows_US.jpg" alt="Harry Potter" class="book-cover">
+<div class="book-container">
+        <img src="https://upload.wikimedia.org/wikipedia/id/5/56/Harry_potter_deathly_hallows_US.jpg" alt="Cover Buku" class="book-cover">
         <div class="book-title">Harry Potter</div>
-        <a href="https://kvongcmehsanalibrary.wordpress.com/wp-content/uploads/2021/07/harrypotter.pdf" target="_blank" class="book-link">Baca Buku</a>
-      </div>
-     <div class="book-container">
+        <a href="https://kvongcmehsanalibrary.wordpress.com/wp-content/uploads/2021/07/harrypotter.pdf" class="book-link" target="_blank">Baca Buku</a>
+</div> 
+    <div class="book-container">
     <img src="https://upload.wikimedia.org/wikipedia/id/7/7f/Perahu_Kertas_Sampul.jpg" alt="Cover Buku" class="book-cover">
         <div class="book-title">Perahu Kertas</div>
         <a href="https://repository.bbg.ac.id/bitstream/513/1/Perahu_Kertas.pdf" class="book-link" target="_blank">Baca Buku</a>
@@ -255,11 +226,10 @@
     <img src="https://img.tempo.co/indonesiana/images/all/2016/08/03/700-cil2015.jpg" alt="Cover Buku" class="book-cover">
         <div class="book-title">Cantik Itu Luka</div>
         <a href="https://repository.bbg.ac.id/bitstream/1772/1/Eka_Kurniawan_-_Cantik_itu_Luka.pdf" class="book-link" target="_blank">Baca Buku</a>
-</div>
-  
-
+</div>  
     <h2>Event Literasi Terkini</h2>
     <div class="events-container">
+
       <div class="event-card">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYPZ8J0EUzx5C3yDhZ-AAz0pmVVJfYQaYP8Q&s" alt="Event 1">
         <div class="event-details">
@@ -288,6 +258,8 @@
           <p>Webinar nasional tentang pentingnya literasi digital bagi generasi muda.</p>
           <a href="https://event.detik.com/" target="_blank" class="register-btn">Daftar Webinar</a>
         </div>
+      </div>
+
     </div>
   </div>
 
@@ -308,14 +280,14 @@
 
     function searchBook() {
       const input = document.getElementById("searchInput").value.toLowerCase();
-      const books = document.querySelectorAll(".book-container");
-      books.forEach(book => {
-        const title = book.querySelector(".book-title").textContent.toLowerCase();
-        book.style.display = title.includes(input) ? "block" : "none";
+      const listItems = document.querySelectorAll("#bookList li");
+
+      listItems.forEach(item => {
+        const title = item.textContent.toLowerCase();
+        item.style.display = title.includes(input) ? "block" : "none";
       });
     }
   </script>
 
 </body>
 </html>
-
