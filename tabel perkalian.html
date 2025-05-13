@@ -1,115 +1,27 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Tabel Perkalian</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f8;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px;
-    }
-
-    h1 {
-      color: #333;
-    }
-
-    input, button {
-      padding: 10px;
-      font-size: 16px;
-      margin-right: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    table {
-      margin-top: 20px;
-      border-collapse: collapse;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      background-color: white;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px 20px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #007bff;
-      color: white;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-
-    #result {
-      width: 300px;
-    }
-
-    p {
-      color: red;
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perkalian Sederhana</title>
+    <script>
+        function perkalian() {
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var result = num1 * num2;
+            document.getElementById("hasil").innerText = "Hasil: " + result;
+        }
+    </script>
 </head>
 <body>
-  <h1>Tabel Perkalian</h1>
-  <label for="number">Masukkan angka: </label>
-  <input type="number" id="number" min="1" max="100" />
-  <button onclick="generateTable()">Tampilkan</button>
-
-  <div id="result">
-    <!-- Tabel perkalian akan tampil di sini -->
-  </div>
-
-  <div id="output">
-    <!-- Hasil perkalian akan tampil di sini -->
-  </div>
-
-  <script>
-    function generateTable() {
-      const num = document.getElementById("number").value;
-      const resultDiv = document.getElementById("result");
-      const outputDiv = document.getElementById("output");
-
-      if (!num || num <= 0) {
-        resultDiv.innerHTML = "<p>Masukkan angka yang valid!</p>";
-        outputDiv.innerHTML = "";
-        return;
-      }
-
-      let tableHTML = "<table><tr><th>Perkalian</th><th>Hasil</th></tr>";
-      let outputHTML = "<h2>Hasil Perkalian:</h2><ul>";
-
-      for (let i = 1; i <= 10; i++) {
-        tableHTML += `<tr><td>${num} × ${i}</td><td>${num * i}</td></tr>`;
-        outputHTML += `<li>${num} × ${i} = ${num * i}</li>`;
-      }
-
-      tableHTML += "</table>";
-      outputHTML += "</ul>";
-
-      resultDiv.innerHTML = tableHTML;
-      outputDiv.innerHTML = outputHTML;
-    }
-  </script>
+    <h1>Perkalian Sederhana</h1>
+    <label for="num1">Angka Pertama:</label>
+    <input type="number" id="num1">
+    <br><br>
+    <label for="num2">Angka Kedua:</label>
+    <input type="number" id="num2">
+    <br><br>
+    <button onclick="perkalian()">Hitung Perkalian</button>
+    <p id="hasil"></p>
 </body>
 </html>
