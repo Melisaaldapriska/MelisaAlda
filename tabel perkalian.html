@@ -4,6 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perkalian Sederhana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+        input[type="number"] {
+            padding: 8px;
+            font-size: 16px;
+            width: 100%;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        p#hasil {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
     <script>
         function perkalian() {
             var num1 = parseInt(document.getElementById("num1").value);
@@ -14,14 +66,16 @@
     </script>
 </head>
 <body>
-    <h1>Perkalian Sederhana</h1>
-    <label for="num1">Angka Pertama:</label>
-    <input type="number" id="num1">
-    <br><br>
-    <label for="num2">Angka Kedua:</label>
-    <input type="number" id="num2">
-    <br><br>
-    <button onclick="perkalian()">Hitung Perkalian</button>
-    <p id="hasil"></p>
+    <div class="container">
+        <h1>Perkalian Sederhana</h1>
+        <label for="num1">Angka Pertama:</label>
+        <input type="number" id="num1">
+        <br><br>
+        <label for="num2">Angka Kedua:</label>
+        <input type="number" id="num2">
+        <br><br>
+        <button onclick="perkalian()">Hitung Perkalian</button>
+        <p id="hasil"></p>
+    </div>
 </body>
 </html>
