@@ -76,28 +76,39 @@
   <input type="number" id="number" min="1" max="100" />
   <button onclick="generateTable()">Tampilkan</button>
 
-  <div id="result"></div>
+  <div id="result">
+    <!-- Tabel perkalian akan tampil di sini -->
+  </div>
+
+  <div id="output">
+    <!-- Hasil perkalian akan tampil di sini -->
+  </div>
 
   <script>
     function generateTable() {
       const num = document.getElementById("number").value;
       const resultDiv = document.getElementById("result");
+      const outputDiv = document.getElementById("output");
 
-      // Validasi input
       if (!num || num <= 0) {
         resultDiv.innerHTML = "<p>Masukkan angka yang valid!</p>";
+        outputDiv.innerHTML = "";
         return;
       }
 
-      // Buat tabel
-      let html = "<table><tr><th>Perkalian</th><th>Hasil</th></tr>";
-      for (let i = 1; i <= 10; i++) {
-        html += `<tr><td>${num} × ${i}</td><td>${num * i}</td></tr>`;
-      }
-      html += "</table>";
+      let tableHTML = "<table><tr><th>Perkalian</th><th>Hasil</th></tr>";
+      let outputHTML = "<h2>Hasil Perkalian:</h2><ul>";
 
-      // Tampilkan hasil
-      resultDiv.innerHTML = html;
+      for (let i = 1; i <= 10; i++) {
+        tableHTML += `<tr><td>${num} × ${i}</td><td>${num * i}</td></tr>`;
+        outputHTML += `<li>${num} × ${i} = ${num * i}</li>`;
+      }
+
+      tableHTML += "</table>";
+      outputHTML += "</ul>";
+
+      resultDiv.innerHTML = tableHTML;
+      outputDiv.innerHTML = outputHTML;
     }
   </script>
 </body>
