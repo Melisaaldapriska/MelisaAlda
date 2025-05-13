@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulir Data Pengunjung Perpustakaan Melisa Alda Priska</title>
+    <title>Formulir Data Pengunjung Perpustakaan Melisa- Aksesibel</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@
             margin: 0;
             padding: 20px;
         }
-        h2 {
+        h1 {
             text-align: center;
             color: #333;
         }
@@ -23,90 +23,77 @@
             max-width: 600px;
             margin: auto;
         }
-        table {
-            width: 100%;
-            margin: 20px 0;
+        form {
+            display: flex;
+            flex-direction: column;
         }
-        td {
-            padding: 10px;
+        label {
+            margin-top: 15px;
+            font-weight: bold;
         }
-        input[type="text"], input[type="email"], input[type="tel"], select {
-            width: 100%;
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
             padding: 10px;
+            margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box;
+            font-size: 16px;
         }
         input[type="submit"] {
-            background-color: #5cb85c;
+            background-color: #007BFF;
             color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 12px;
+            margin-top: 20px;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
-            width: 100%;
         }
         input[type="submit"]:hover {
-            background-color: #4cae4c;
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
 
-<h2>Formulir Data Pengunjung Perpustakaan Melisa Alda Priska</h2>
-<div class="form-container">
-    <form method="post" action="inputdosen.php">
-        <table>
-            <tr>
-                <td>Nama</td>
-                <td><input type="text" name="nama" required></td>
-            </tr>
-            <tr>
-                <td>NIP/NIM</td>
-                <td><input type="text" name="NIM" required></td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td><input type="email" name="email" required></td>
-            </tr>
-            <tr>
-                <td>Telepon</td>
-                <td><input type="tel" name="telepon" required></td>
-            </tr>
-            <tr>
-                <td>Jenis Kelamin</td>
-                <td>
-                    <select name="jenis_kelamin" required>
-                        <option value="">Pilih Jenis Kelamin</option>
-                        <option value="Laki-laki">Laki-laki</option>
-                        <option value="Perempuan">Perempuan</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Alamat</td>
-                <td><input type="text" name="alamat" required></td>
-            </tr>
-            <tr>
-                <td>Jenis Pengunjung</td>
-                <td>
-                    <select name="jenis_pengunjung" required>
-                        <option value="">Pilih Jenis Pengunjung</option>
-                        <option value="Mahasiswa">Mahasiswa</option>
-                        <option value="Dosen">Dosen</option>
-                        <option value="Tenaga Pendidik">Tenaga Pendidik</option>
-                        <option value="Pustakawan">Pustakawan</option>
-                        <option value="Staff">Staff</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="submit" value="Kirim Data">
-                </td>
-            </tr>
-        </table>
+<h1>Formulir Pengunjung Perpustakaan</h1>
+<div class="form-container" role="form" aria-labelledby="form-title">
+    <form method="post" action="inputpengunjung.php">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" required aria-required="true">
+
+        <label for="nim">NIP/NIM</label>
+        <input type="text" id="nim" name="nim" required aria-required="true">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required aria-required="true">
+
+        <label for="telepon">No. Telepon</label>
+        <input type="tel" id="telepon" name="telepon" required aria-required="true">
+
+        <label for="jenis_kelamin">Jenis Kelamin</label>
+        <select id="jenis_kelamin" name="jenis_kelamin" required aria-required="true">
+            <option value="">-- Pilih Jenis Kelamin --</option>
+            <option value="Laki-laki">Laki-laki</option>
+            <option value="Perempuan">Perempuan</option>
+        </select>
+
+        <label for="alamat">Alamat</label>
+        <input type="text" id="alamat" name="alamat" required aria-required="true">
+
+        <label for="jenis_pengunjung">Jenis Pengunjung</label>
+        <select id="jenis_pengunjung" name="jenis_pengunjung" required aria-required="true">
+            <option value="">-- Pilih Jenis Pengunjung --</option>
+            <option value="Mahasiswa">Mahasiswa</option>
+            <option value="Dosen">Dosen</option>
+            <option value="Tenaga Pendidik">Tenaga Pendidik</option>
+            <option value="Pustakawan">Pustakawan</option>
+            <option value="Staff">Staff</option>
+        </select>
+
+        <input type="submit" value="Kirim Data">
     </form>
 </div>
 
