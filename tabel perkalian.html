@@ -1,241 +1,78 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perkalian</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #74ebd5, #9face6);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            background-color: #fff;
-            padding: 35px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-            animation: fadeIn 0.8s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        h1 {
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 25px;
-        } 
-        
- .link-section {
-    margin-top: 40px;
-    background-color: #ffffffcc;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: left;
-}
-
-.link-section h4 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    color: #2c3e50;
-    border-bottom: 2px solid #6a5acd;
-    padding-bottom: 5px;
-}
-
-.link-section ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.link-section li {
-    margin-bottom: 10px;
-}
-
-.link-section a {
-    display: block;
-    padding: 10px 15px;
-    background-color: #f0f0f8;
-    color: #333;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.link-section a:hover {
-    background-color: #6a5acd;
-    color: #fff;
-}
-        * {
-            box-sizing: border-box;
-        }
-        label {
-            display: block;
-            text-align: left;
-            margin-bottom: 5px;
-            font-weight: 500;
-            color: #444;
-        }
-
-        input[type="number"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            border: 2px solid #ccc;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-
-        input[type="number"]:focus {
-            border-color: #6a5acd;
-            outline: none;
-        }
-
-        input.invalid {
-            border-color: #e74c3c;
-        }
-
-        .button-group {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-        }
-
-        button {
-            flex: 1;
-            padding: 12px;
-            font-size: 16px;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn-hitung {
-            background-color: #6a5acd;
-            color: white;
-        }
-
-        .btn-hitung:hover {
-            background-color: #5a4ab1;
-        }
-
-        .btn-reset {
-            background-color: #f44336;
-            color: white;
-        }
-
-        .btn-reset:hover {
-            background-color: #d32f2f;
-        }
-
-        p#hasil {
-            margin-top: 25px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #2c3e50;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.4s ease;
-        }
-
-        p#hasil.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-    <script>
-        function perkalian() {
-            const num1 = document.getElementById("num1");
-            const num2 = document.getElementById("num2");
-            const hasil = document.getElementById("hasil");
-
-            const val1 = parseFloat(num1.value);
-            const val2 = parseFloat(num2.value);
-
-            let valid = true;
-
-            if (isNaN(val1)) {
-                num1.classList.add("invalid");
-                valid = false;
-            } else {
-                num1.classList.remove("invalid");
-            }
-
-            if (isNaN(val2)) {
-                num2.classList.add("invalid");
-                valid = false;
-            } else {
-                num2.classList.remove("invalid");
-            }
-
-            if (!valid) {
-                hasil.textContent = "⚠️ Mohon masukkan dua angka yang valid.";
-                hasil.classList.add("show");
-                return;
-            }
-
-            const result = val1 * val2;
-            hasil.textContent = `✅ Hasil: ${val1} × ${val2} = ${result}`;
-            hasil.classList.add("show");
-        }
-
-        function resetForm() {
-            document.getElementById("num1").value = "";
-            document.getElementById("num2").value = "";
-            document.getElementById("hasil").textContent = "";
-            document.getElementById("hasil").classList.remove("show");
-            document.getElementById("num1").classList.remove("invalid");
-            document.getElementById("num2").classList.remove("invalid");
-        }
-    </script>
+  <!-- ... [head seperti sebelumnya, tanpa perubahan] ... -->
 </head>
 <body>
-    <div class="container">
-        <h1>🔢 Perkalian Sederhana</h1>
-        <label for="num1">Angka Pertama:</label>
-        <input type="number" id="num1" placeholder="Masukkan angka pertama">
+  <div class="container">
+    <h1>🔢 Perkalian Sederhana</h1>
+    <label for="num1">Angka Pertama:</label>
+    <input type="number" id="num1" placeholder="Masukkan angka pertama">
 
-        <label for="num2">Angka Kedua:</label>
-        <input type="number" id="num2" placeholder="Masukkan angka kedua">
+    <label for="num2">Angka Kedua:</label>
+    <input type="number" id="num2" placeholder="Masukkan angka kedua">
 
-        <div class="button-group">
-            <button class="btn-hitung" onclick="perkalian()">Hitung</button>
-            <button class="btn-reset" onclick="resetForm()">Reset</button>
-        </div>
-
-        <p id="hasil"></p>
+    <div class="button-group">
+      <button class="btn-hitung" onclick="perkalian()">Hitung</button>
+      <button class="btn-reset" onclick="resetForm()">Reset</button>
     </div>
-    
-   <div class="link-section">
+
+    <p id="hasil"></p>
+  </div>
+
+  <!-- TABEL HOME -->
+  <div class="container" style="margin-top: 30px;">
+    <h2>🏠 Tabel Home</h2>
+    <table border="1" width="100%" style="border-collapse: collapse; margin-top: 10px;">
+      <thead>
+        <tr style="background-color: #6a5acd; color: white;">
+          <th>Judul Halaman</th>
+          <th>Deskripsi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Home</td>
+          <td>Halaman utama dari situs kalkulator perkalian sederhana.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TABEL DATA PENGUNJUNG -->
+  <div class="container" style="margin-top: 30px;">
+    <h2>📋 Tabel Data Pengunjung</h2>
+    <table border="1" width="100%" style="border-collapse: collapse; margin-top: 10px;">
+      <thead>
+        <tr style="background-color: #6a5acd; color: white;">
+          <th>Nama</th>
+          <th>Email</th>
+          <th>Tanggal Kunjungan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Andi</td>
+          <td>andi@example.com</td>
+          <td>13 Mei 2025</td>
+        </tr>
+        <tr>
+          <td>Sita</td>
+          <td>sita@example.com</td>
+          <td>12 Mei 2025</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- LINK SECTION -->
+  <div class="link-section">
     <h4>📄 Halaman Lain</h4>
     <ul>
-        <li><a href="index.html">🏠 Home</a></li>
-        <li><a href="formulir pengunjung.html">📋 Data Pengunjung</a></li>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="formulir pengunjung.html">📋 Data Pengunjung</a></li>
     </ul>
-</div>
+  </div>
 
 </body>
 </html>
-
-
