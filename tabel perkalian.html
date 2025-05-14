@@ -24,7 +24,7 @@
             padding: 30px;
             max-width: 380px;
             width: 90%;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
             backdrop-filter: blur(10px);
             text-align: center;
             animation: fadeIn 0.5s ease-in-out;
@@ -41,7 +41,7 @@
         }
 
         h1 {
-            color: #2d3436;
+            color: #34495e;
             margin-bottom: 20px;
             font-size: 24px;
         }
@@ -65,24 +65,32 @@
         }
 
         input[type="number"]:focus {
-            border-color: #0984e3;
+            border-color: #a29bfe;
             outline: none;
         }
 
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
         button {
-            background-color: #0984e3;
+            flex: 1;
+            background-color: #a29bfe;
             color: white;
             border: none;
             border-radius: 10px;
-            padding: 12px 20px;
+            padding: 12px 0;
             font-size: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         button:hover {
-            background-color: #74b9ff;
-            transform: scale(1.05);
+            background-color: #dfe6e9;
+            color: #2d3436;
+            transform: scale(1.03);
         }
 
         p#hasil {
@@ -103,22 +111,31 @@
                 document.getElementById("hasil").innerText = "Mohon masukkan kedua angka.";
             }
         }
+
+        function resetForm() {
+            document.getElementById("num1").value = '';
+            document.getElementById("num2").value = '';
+            document.getElementById("hasil").innerText = '';
+        }
     </script>
 </head>
 <body>
     <div class="container">
         <img src="https://cdn-icons-png.flaticon.com/512/201/201612.png" alt="Kalkulator">
         <h1>Perkalian Sederhana</h1>
+
         <label for="num1">Angka Pertama:</label>
         <input type="number" id="num1" placeholder="Masukkan angka pertama">
 
         <label for="num2">Angka Kedua:</label>
         <input type="number" id="num2" placeholder="Masukkan angka kedua">
 
-        <button onclick="perkalian()">Hitung Perkalian</button>
-        <button onclick="reset()">Hapus</button>
+        <div class="button-group">
+            <button onclick="perkalian()">Hitung</button>
+            <button onclick="resetForm()">Hapus</button>
+        </div>
+
         <p id="hasil"></p>
     </div>
 </body>
 </html>
-
