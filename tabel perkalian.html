@@ -124,6 +124,8 @@
     }
   </script>
 </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <body>
   <div class="container">
     <h1>Kalkulator Perkalian</h1>
@@ -134,11 +136,12 @@
     <input type="number" id="num2" placeholder="Contoh: 3">
 
     <div class="button-group">
-      <button class="btn-hitung" onclick="perkalian()">Hitung</button>
-      <button class="btn-reset" onclick="resetForm()">Reset</button>
-    </div>
+  <button onclick="perkalian()"><i class="fas fa-calculator"></i> Hitung</button>
+  <button onclick="resetForm()"><i class="fas fa-eraser"></i> Hapus</button>
+</div>
 
-    <div id="hasil"></div>
+<p id="hasil"><i class="fas fa-equals"></i> </p>
+
   </div>
 </body>
 </html>
