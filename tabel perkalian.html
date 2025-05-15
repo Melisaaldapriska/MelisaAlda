@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kalkulator Perkalian</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -77,6 +78,10 @@
       border-radius: 10px;
       cursor: pointer;
       transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
 
     .btn-hitung {
@@ -124,26 +129,29 @@
     }
   </script>
 </head>
-  <link rel="stylesheet" href="https://media.istockphoto.com/id/1132117523/id/vektor/ikon-kalkulator-datar-sederhana-terisolasi-pada-latar-belakang-putih-elemen-desain-ilustrasi.jpg?s=612x612&w=0&k=20&c=CnMQ5_ocYj4cLQOVw_q0fU9zW5OSGHFvqq0DK95XCno=">
-
 <body>
   <div class="container">
-  <i class="fas fa-image" style="font-size: 48px; color: #74b9ff; margin-bottom: 10px;"></i>
-  <h1>Kalkulator Perkalian</h1>
-   <label for="num1">Angka Pertama</label>
+    <i class="fas fa-calculator" style="font-size: 48px; color: #74b9ff; margin-bottom: 10px;"></i>
+    <h1>Kalkulator Perkalian</h1>
+
+    <label for="num1">Angka Pertama</label>
     <input type="number" id="num1" placeholder="Masukkan Angka Pertama">
 
     <label for="num2">Angka Kedua</label>
     <input type="number" id="num2" placeholder="Masukkan Angka Kedua">
 
     <div class="button-group">
- <button onclick="perkalian()"><i class="fas fa-calculator"></i> Hitung</button>
-  <button onclick="resetForm()"><i class="fas fa-eraser"></i> Hapus</button>
-</div>
+      <button class="btn-hitung" onclick="perkalian()">
+        <i class="fas fa-equals"></i> Hitung
+      </button>
+      <button class="btn-reset" onclick="resetForm()">
+        <i class="fas fa-eraser"></i> Hapus
+      </button>
+    </div>
 
-<p id="hasil"><i class="fas fa-equals"></i> </p>
-
+    <p id="hasil"></p>
   </div>
 </body>
 </html>
+
 
