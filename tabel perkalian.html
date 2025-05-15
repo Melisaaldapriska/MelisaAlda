@@ -3,151 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Perkalian Sederhana</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Kalkulator Perkalian</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #fceabb, #f8b500); /* soft pastel gradient */
       margin: 0;
       padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 100vh;
-      color: #2c3e50;
+      color: #34495e;
     }
 
     .container {
-      background: #fffdf8;
+      background-color: #ffffff;
       border-radius: 20px;
-      padding: 30px 25px;
-      max-width: 400px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      padding: 30px;
       width: 90%;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 420px;
       text-align: center;
-      animation: fadeIn 0.6s ease-in-out;
+      animation: slideIn 0.5s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .container img {
-      width: 80px;
-      margin-bottom: 15px;
-    }
-
     h1 {
+      font-size: 26px;
       margin-bottom: 20px;
-      font-size: 24px;
-      color: #444;
+      color: #2c3e50;
     }
 
     label {
-      text-align: left;
       display: block;
-      margin: 15px 0 5px;
-      font-size: 14px;
-      color: #666;
+      text-align: left;
+      margin: 10px 0 5px;
+      font-weight: 600;
     }
 
     input[type="number"] {
       width: 100%;
       padding: 10px;
       border: 1px solid #ddd;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 16px;
-      background-color: #fffefc;
-      transition: all 0.3s;
+      background-color: #f9f9f9;
+      transition: border 0.3s ease;
     }
 
     input[type="number"]:focus {
-      border-color: #f8c291;
-      box-shadow: 0 0 6px rgba(248, 194, 145, 0.4);
+      border-color: #7ed6df;
       outline: none;
     }
 
     .button-group {
-      display: flex;
-      justify-content: space-between;
       margin-top: 20px;
-      gap: 10px;
+      display: flex;
+      gap: 15px;
     }
 
-    .button-group button {
+    button {
       flex: 1;
-      padding: 12px 0;
-      font-size: 15px;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 600;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
-      transition: 0.3s ease;
+      transition: all 0.3s ease;
     }
 
-    .button-group button:first-child {
-      background-color: #81ecec;
-      color: #2d3436;
-    }
-
-    .button-group button:first-child:hover {
-      background-color: #74d3d3;
-    }
-
-    .button-group button:last-child {
-      background-color: #fab1a0;
-      color: #2d3436;
-    }
-
-    .button-group button:last-child:hover {
-      background-color: #e17055;
+    .btn-hitung {
+      background-color: #74b9ff;
       color: white;
+    }
+
+    .btn-hitung:hover {
+      background-color: #0984e3;
+    }
+
+    .btn-reset {
+      background-color: #fab1a0;
+      color: white;
+    }
+
+    .btn-reset:hover {
+      background-color: #e17055;
     }
 
     #hasil {
       margin-top: 25px;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
       color: #2d3436;
     }
   </style>
   <script>
     function perkalian() {
-      var num1 = parseInt(document.getElementById("num1").value);
-      var num2 = parseInt(document.getElementById("num2").value);
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      const hasil = document.getElementById("hasil");
+
       if (!isNaN(num1) && !isNaN(num2)) {
-        var result = num1 * num2;
-        document.getElementById("hasil").innerText = "Hasil: " + result;
+        hasil.textContent = "Hasil: " + (num1 * num2);
       } else {
-        document.getElementById("hasil").innerText = "Mohon masukkan kedua angka.";
+        hasil.textContent = "Mohon masukkan kedua angka dengan benar.";
       }
     }
 
     function resetForm() {
-      document.getElementById("num1").value = '';
-      document.getElementById("num2").value = '';
-      document.getElementById("hasil").innerText = '';
+      document.getElementById("num1").value = "";
+      document.getElementById("num2").value = "";
+      document.getElementById("hasil").textContent = "";
     }
   </script>
 </head>
 <body>
   <div class="container">
-    <img src="https://cdn-icons-png.flaticon.com/512/201/201612.png" alt="Kalkulator">
-    <h1>Perkalian Sederhana</h1>
+    <h1>Kalkulator Perkalian</h1>
+    <label for="num1">Angka Pertama</label>
+    <input type="number" id="num1" placeholder="Contoh: 5">
 
-    <label for="num1">Angka Pertama:</label>
-    <input type="number" id="num1" placeholder="Masukkan angka pertama">
-
-    <label for="num2">Angka Kedua:</label>
-    <input type="number" id="num2" placeholder="Masukkan angka kedua">
+    <label for="num2">Angka Kedua</label>
+    <input type="number" id="num2" placeholder="Contoh: 3">
 
     <div class="button-group">
-      <button onclick="perkalian()">Hitung</button>
-      <button onclick="resetForm()">Hapus</button>
+      <button class="btn-hitung" onclick="perkalian()">Hitung</button>
+      <button class="btn-reset" onclick="resetForm()">Reset</button>
     </div>
 
-    <p id="hasil"></p>
+    <div id="hasil"></div>
   </div>
 </body>
 </html>
