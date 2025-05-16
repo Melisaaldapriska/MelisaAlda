@@ -6,6 +6,39 @@
     <title>About Me</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        .cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: #fef3e7;
+    border: 1px solid #e0d6cc;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+    text-align: center;
+    color: #4e3b31;
+}
+
+.cookie-banner button {
+    background-color: #f4d9c6;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #4e3b31;
+    transition: 0.3s ease;
+}
+
+.cookie-banner button:hover {
+    background-color: #e6bfa8;
+    color: #fff;
+}
+
         body {
             font-family: 'Roboto', sans-serif;
             background-image: url('https://www.transparenttextures.com/patterns/cream-pixels.png');
@@ -158,6 +191,23 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
+    <div class="cookie-banner" id="cookie-banner">
+    Situs ini menggunakan cookie untuk meningkatkan pengalaman pengguna. 
+    <button onclick="acceptCookies()">Saya Setuju</button>
+</div>
+
+<script>
+    function acceptCookies() {
+        localStorage.setItem("cookieAccepted", "true");
+        document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    window.onload = function () {
+        if (!localStorage.getItem("cookieAccepted")) {
+            document.getElementById("cookie-banner").style.display = "block";
+        }
+    };
+</script>
 </body>
 </html>
 
